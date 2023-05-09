@@ -60,9 +60,9 @@ int main(void)
 #pragma endregion
 
 	//shader loading example
-	//Shader s;
-	//s.loadShaderProgramFromFile(RESOURCES_PATH "vertex.vert", RESOURCES_PATH "fragment.frag");
-	//s.bind();
+	Shader s;
+	s.loadShaderProgramFromFile(RESOURCES_PATH "vertex.vert", RESOURCES_PATH "fragment.frag");
+	s.bind();
 
 	while (!glfwWindowShouldClose(window))
 	{
