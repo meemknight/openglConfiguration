@@ -6,12 +6,12 @@
 #include <iostream>
 
 
-#define USE_GPU_ENGINE 0
-extern "C"
-{
-	__declspec(dllexport) unsigned long NvOptimusEnablement = USE_GPU_ENGINE;
-	__declspec(dllexport) int AmdPowerXpressRequestHighPerformance = USE_GPU_ENGINE;
+#if defined(_WIN32) || defined(_WIN64)
+extern "C" {
+    __declspec(dllexport) unsigned long NvOptimusEnablement = USE_GPU_ENGINE;
+    __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = USE_GPU_ENGINE;
 }
+#endif
 
 
 static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
